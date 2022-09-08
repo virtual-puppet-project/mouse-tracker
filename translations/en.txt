@@ -8,3 +8,12 @@ Additional setup steps might be necessary depending on your Linux distribution. 
 MOUSE_TRACKER_TOGGLE_TRACKING_START="Start"
 MOUSE_TRACKER_TOGGLE_TRACKING_STOP="Stop"
 MOUSE_TRACKER_TOGGLE_TRACKING_BUTTON_HINT="Start tracking your mouse position"
+
+MOUSE_TRACKER_SHOW_ADVANCED_OPTIONS_TOGGLE="Toggle advanced options"
+MOUSE_TRACKER_SHOW_ADVANCED_OPTIONS_HINT="Show or hide advanced tracking options"
+
+MOUSE_TRACKER_DAMPING_LABEL="Damping"
+MOUSE_TRACKER_DAMPING_HINT="The damping factor used. Higher values result in LESS movement"
+
+MOUSE_TRACKER_SCREEN_LABEL="Screen"
+MOUSE_TRACKER_SCREEN_HINT="The screen to center the mouse on. Only useful if there is more than 1 screen."
