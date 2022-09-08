@@ -1,0 +1,22 @@
+[package]
+name = "mouse-poller"
+version = "0.1.0"
+edition = "2021"
+authors = ["Tim Yuen <timothy.yuen22@gmail.com>"]
+description = "GDNative library for polling a user's mouse position."
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+name = "mouse_poller"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mouse-printer"
+path = "src/bin/main.rs"
+
+[dependencies]
+gdnative = "0.10"
+mouse-rs = "0.4"

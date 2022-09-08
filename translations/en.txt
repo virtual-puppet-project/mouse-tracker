@@ -1,0 +1,10 @@
+MOUSE_TRACKER_EXTENSION_NAME="MouseTracker" ;; DO NOT TRANSLATE
+
+MOUSE_TRACKER_USAGE_LABEL_TEXT="Track your mouse position. This assumes that your mouse is being tracked on your primary screen."
+MOUSE_TRACKER_USAGE_LABEL_TEXT_LINUX="Track your mouse position.
+
+Additional setup steps might be necessary depending on your Linux distribution. Please see this page for details: https://github.com/AltF02/mouse-rs"
+
+MOUSE_TRACKER_TOGGLE_TRACKING_START="Start"
+MOUSE_TRACKER_TOGGLE_TRACKING_STOP="Stop"
+MOUSE_TRACKER_TOGGLE_TRACKING_BUTTON_HINT="Start tracking your mouse position"
