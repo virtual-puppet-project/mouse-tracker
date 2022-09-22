@@ -1,0 +1,14 @@
+[extension]
+name="MouseTracker"
+
+[[resources]]
+name = "MouseTracker"
+tags = ["tracker"]
+entrypoint = "mouse_tracker.gd"
+gui = "gui.gd"
+
+[[resources]]
+name = "MouseTrackerLib"
+tags = ["plugin"]
+entrypoint="lib"
+gdnative=true
