@@ -1,5 +1,5 @@
 [extension]
-name="MouseTracker"
+name = "MouseTracker"
 
 [[resources]]
 name = "MouseTracker"
@@ -10,5 +10,5 @@ gui = "gui.gd"
 [[resources]]
 name = "MouseTrackerLib"
 tags = ["plugin"]
-entrypoint="lib"
-gdnative=true
+entrypoint = "mouse-poller"
+gdnative = true
