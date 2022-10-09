@@ -6,6 +6,7 @@ name = "MouseTracker"
 tags = ["tracker"]
 entrypoint = "mouse_tracker.gd"
 gui = "gui.gd"
+translation-key = "MOUSE_TRACKER_TRACKER_NAME"
 
 [[resources]]
 name = "MouseTrackerLib"

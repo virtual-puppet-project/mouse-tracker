@@ -161,7 +161,7 @@ func _on_toggle_tracking(button: Button) -> void:
 	var tracker: TrackingBackendTrait
 	var found := false
 	for i in trackers.values():
-		if i is TrackingBackendTrait and i.get_name() == "MouseTracker":
+		if i is TrackingBackendTrait and i.get_name() == tr("MOUSE_TRACKER_TRACKER_NAME"):
 			tracker = i
 			found = true
 			break
@@ -187,4 +187,4 @@ func _on_toggle_tracking(button: Button) -> void:
 		
 		button.text = tr("MOUSE_TRACKER_TOGGLE_TRACKING_STOP")
 	
-	AM.ps.publish(Globals.TRACKER_TOGGLED, not found, "MouseTracker")
+	AM.ps.publish(Globals.TRACKER_TOGGLED, not found, tr("MOUSE_TRACKER_TRACKER_NAME"))

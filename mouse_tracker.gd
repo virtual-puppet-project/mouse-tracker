@@ -61,13 +61,13 @@ func _set_screen_values() -> void:
 #-----------------------------------------------------------------------------#
 
 func get_name() -> String:
-	return "MouseTracker"
+	return tr("MOUSE_TRACKER_TRACKER_NAME")
 
 func start_receiver() -> void:
 	var res: Result = Safely.wrap(AM.em.load_gdnative_resource(
 		"MouseTracker", "MouseTrackerLib", "MousePoller"))
 	if res.is_err():
-		logger.error("Unable to load mouse tracker")
+		logger.error(res)
 		return
 	
 	tracker = res.unwrap()
