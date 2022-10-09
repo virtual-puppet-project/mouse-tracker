@@ -6,8 +6,8 @@ Uses [mouse-rs](https://github.com/AltF02/mouse-rs) via [GDNative](https://docs.
 ## Building
 
 1. Install the latest stable [Rust](https://www.rust-lang.org/) toolchain
-2. Run `cargo build --lib --release` to build the library
-3. Copy the compiled library under `target/release/<lib-name>.<lib-extension>` to `lib/`
+2. In the `rust` directory, run `cargo build --lib --release` to build the library
+3. Copy the compiled library under `rust/target/release/<lib-name>.<lib-extension>` to `mouse-poller/`
 
 ## Using with [vpuppr](https://github.com/virtual-puppet-project/vpuppr)
 
@@ -23,7 +23,7 @@ Uses [mouse-rs](https://github.com/AltF02/mouse-rs) via [GDNative](https://docs.
 1. Find vpuppr's resource folder
 2. Create a new folder at `resources/extensions/mouse-tracker/`
 3. Copy the following folders and files to that new directory
-    * `./lib/`
+    * `./mouse-poller/`
     * `./translations/`
     * `mouse_tracker.gd`
     * `gui.gd`
