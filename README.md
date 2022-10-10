@@ -6,8 +6,8 @@ Uses [mouse-rs](https://github.com/AltF02/mouse-rs) via [GDNative](https://docs.
 ## Building
 
 1. Install the latest stable [Rust](https://www.rust-lang.org/) toolchain
-2. In the `rust` directory, run `cargo build --lib --release` to build the library
-3. Copy the compiled library under `rust/target/release/<lib-name>.<lib-extension>` to `mouse-poller/`
+2. Install Python 3.8+
+3. Run `python3 setup.py --setup`
 
 ## Using with [vpuppr](https://github.com/virtual-puppet-project/vpuppr)
 
@@ -27,5 +27,5 @@ Uses [mouse-rs](https://github.com/AltF02/mouse-rs) via [GDNative](https://docs.
     * `./translations/`
     * `mouse_tracker.gd`
     * `gui.gd`
-    * `config.ini`
+    * `config.toml`
 4. Use the tracker in the app!

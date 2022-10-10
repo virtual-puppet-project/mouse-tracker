@@ -1,0 +1,74 @@
+---
+name: Generate release
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        description: Tag to checkout
+        required: true
+
+env:
+  repo-path: mouse-tracker
+
+jobs:
+  generate-release:
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - tar-name: mouse-tracker_windows.tar.gz
+            os: windows-latest
+          - tar-name: mouse-tracker_linux.tar.gz
+            os: ubuntu-latest
+          - tar-name: mouse-tracker_osx.tar.gz
+            os: macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repo
+        if: ${{ github.event_name == 'push' }}
+        uses: actions/checkout@v3
+        with:
+          path: ${{ env.repo-path }}
+      - name: Checkout repo
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        uses: actions/checkout@v3
+        with:
+          path: ${{ env.repo-path }}
+          ref: ${{ inputs.tag }}
+
+      # https://stackoverflow.com/questions/58177786/get-the-current-pushed-tag-in-github-actions
+      - name: Set tag
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Install Linux dependencies
+        if: matrix.os == 'ubuntu-latest'
+        shell: bash
+        run: sudo apt-get install -y libxdo-dev
+
+      - name: Run setup script
+        if: matrix.os == 'macos-latest'
+        working-directory: ${{ env.repo-path }}
+        shell: bash
+        run: |
+          python3 setup.py setup --export
+      - name: Run setup script
+        if: matrix.os != 'macos-latest'
+        working-directory: ${{ env.repo-path }}
+        shell: bash
+        run: |
+          python setup.py setup --export
+
+      - name: Create tar
+        shell: bash
+        run: tar -czvf ${{ matrix.tar-name }} ${{ env.repo-path }}
+
+      - name: Generate release
+        uses: you-win/action-gh-release@v1
+        with:
+          files: ${{ matrix.tar-name }}
+          name: ${{ env.RELEASE_VERSION }}
+          tag_name: ${{ env.RELEASE_VERSION }}
